@@ -32,17 +32,17 @@ class Sprite(pygame.sprite.Sprite):
         global bg_color 
         bg_color = random.choice([BLUE,LIGHTBLUE,DARKBLUE])
     all_sprites_list =pygame.sprite.Group() 
-    Sprite1 = Sprite(WHITE,20,30)
-    Sprite1.rect.x = random.randint(0,400) 
-    Sprite1.rect.y = random.randint(0,370)
-    all_sprites_list.add(Sprite1) 
-    screen = pygame.display.set_mode([500,400])
-    pygame.display.set_caption('Boundary Sprite' )  
-    bg_color = BLUE
-    screen.fill(bg_color)
-    exit = False 
-    clock = pygame.time.Clock() 
-    while not exit:
+Sprite1 = Sprite(WHITE,20,30)
+Sprite1.rect.x = random.randint(0,400) 
+Sprite1.rect.y = random.randint(0,370)
+all_sprites_list.add(Sprite1) 
+screen = pygame.display.set_mode([500,400])
+pygame.display.set_caption('Boundary Sprite' )  
+bg_color = BLUE
+screen.fill(bg_color)
+exit = False 
+clock = pygame.time.Clock() 
+while not exit:
         for event in pygame.event.get():
             if event . type == pygame.QUIT:
                 exit = True 
@@ -50,9 +50,9 @@ class Sprite(pygame.sprite.Sprite):
                 Sprite1.change_color() 
             elif event.type == BACKGROUND_COLOR_CHANGE_EVENT:
                 Sprite1.change_background()
-        all_sprites_list.update() 
+            all_sprites_list.update() 
         screen.fill(bg_color)
         all_sprites_list.draw(screen)
         pygame.display.flip()
         clock.tick(240)
-    pygame.quit()
+        pygame.quit()
